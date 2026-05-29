@@ -1,2 +1,5 @@
 [bandit]
-skips = B101,B104,B108,B603,B607
+# B101: asserts (used in tests). B104: host=0.0.0.0 is intentional — the server
+# runs behind a gateway/Alpic, not exposed directly. B108: hardcoded /tmp not used.
+# Dropped B603/B607 (no subprocess use) so they can't mask a future finding.
+skips = B101,B104,B108
